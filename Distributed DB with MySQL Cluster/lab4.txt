@@ -1,0 +1,346 @@
+Script started on Wed 18 Oct 2023 06:10:00 AM CDT
+]0;mtalh2@csc570e:~[?1034h[mtalh2@csc570e ~]$ vm-connect-mtalh2
+csc572-docker:~# [6ndocker container ls
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+csc572-docker:~# [6ndocker network create cluster-network --subnet=192.168.0.0/16
+114cdd83baf667b66ddcb7527e49fb5febc89df07a7a5ed2124f3b5acd10ac67
+csc572-docker:~# [6ndocker run -d --net=cluster-network --name=mgmt1 --ip=192.168.0
+.2 mysql/mysql-
+docker: invalid reference format.
+See 'docker run --help'.
+csc572-docker:~# cluster:8.0 ndb_mgmd
+-ash: cluster:8.0: not found
+csc572-docker:~# [6n
+csc572-docker:~# docker run -d --net=cluster-network --name=mgmt1 --ip=192.168.0
+.2 mysql/mysql-cluster:8.0 ndb_mgmd
+Unable to find image 'mysql/mysql-cluster:8.0' locally
+8.0: Pulling from mysql/mysql-cluster
+
+[1A[2K6a4a3ef82cdc: Pulling fs layer [1B
+[1A[2K47477b9001f1: Pulling fs layer [1B
+[1A[2Kc1f303dd79fd: Pulling fs layer [1B
+[1A[2Kc2a8ac45ca01: Pulling fs layer [1B
+[1A[2K8d5d9330d269: Pulling fs layer [1B
+[1A[2Ked452d159ffe: Pulling fs layer [1B
+[1A[2Kf45794478ecf: Pulling fs layer [1B
+[1A[2K8b09b2ba898a: Pulling fs layer [1B
+[1A[2K14512391bd1a: Pulling fs layer [1B[6A[2Kc2a8ac45ca01: Waiting [6B[5A[2K8d5d9330d269: Waiting [5B[4A[2Ked452d159ffe: Waiting [4B[3A[2Kf45794478ecf: Waiting [3B[2A[2K8b09b2ba898a: Waiting [2B[1A[2K14512391bd1a: Waiting [1B[9A[2K6a4a3ef82cdc: Downloading  489.9kB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading  537.5kB/146MB[7B[9A[2K6a4a3ef82cdc: Downloading  2.468MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading  3.229MB/146MB[7B[8A[2K47477b9001f1: Downloading  19.89kB/1.856MB[8B[9A[2K6a4a3ef82cdc: Downloading   5.43MB/48.54MB[9B[9A[2K6a4a3ef82cdc: Downloading  7.396MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading  5.907MB/146MB[7B[8A[2K47477b9001f1: Downloading  586.3kB/1.856MB[8B[9A[2K6a4a3ef82cdc: Downloading  9.366MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading  8.066MB/146MB[7B[8A[2K47477b9001f1: Downloading  1.438MB/1.856MB[8B[7A[2Kc1f303dd79fd: Downloading  12.34MB/146MB[7B[9A[2K6a4a3ef82cdc: Downloading  12.81MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading  16.65MB/146MB[7B[8A[2K47477b9001f1: Downloading  1.856MB/1.856MB[8B[8A[2K47477b9001f1: Verifying Checksum [8B[8A[2K47477b9001f1: Download complete [8B[9A[2K6a4a3ef82cdc: Downloading  15.26MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading  19.31MB/146MB[7B[9A[2K6a4a3ef82cdc: Downloading  17.23MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading     22MB/146MB[7B[9A[2K6a4a3ef82cdc: Downloading  19.71MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading  25.74MB/146MB[7B[9A[2K6a4a3ef82cdc: Downloading  23.65MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading  29.49MB/146MB[7B[9A[2K6a4a3ef82cdc: Downloading  27.58MB/48.54MB[9B[9A[2K6a4a3ef82cdc: Downloading  30.03MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading  32.72MB/146MB[7B[6A[2Kc2a8ac45ca01: Downloading     696B/696B[6B[6A[2Kc2a8ac45ca01: Verifying Checksum [6B[6A[2Kc2a8ac45ca01: Download complete [6B[9A[2K6a4a3ef82cdc: Downloading   32.5MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading  35.39MB/146MB[7B[9A[2K6a4a3ef82cdc: Downloading  36.43MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading  38.09MB/146MB[7B[9A[2K6a4a3ef82cdc: Downloading  39.37MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading   42.4MB/146MB[7B[9A[2K6a4a3ef82cdc: Downloading  42.81MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading   46.7MB/146MB[7B[9A[2K6a4a3ef82cdc: Downloading  44.78MB/48.54MB[9B[9A[2K6a4a3ef82cdc: Verifying Checksum [9B[9A[2K6a4a3ef82cdc: Download complete [9B[7A[2Kc1f303dd79fd: Downloading  51.55MB/146MB[7B[7A[2Kc1f303dd79fd: Downloading   54.8MB/146MB[7B[9A[2K6a4a3ef82cdc: Extracting  491.5kB/48.54MB[9B[9A[2K6a4a3ef82cdc: Extracting  2.949MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading  58.03MB/146MB[7B[9A[2K6a4a3ef82cdc: Extracting  5.407MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading   59.1MB/146MB[7B[7A[2Kc1f303dd79fd: Downloading  63.96MB/146MB[7B[9A[2K6a4a3ef82cdc: Extracting  7.373MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading  67.69MB/146MB[7B[9A[2K6a4a3ef82cdc: Extracting  8.847MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading  68.77MB/146MB[7B[4A[2Ked452d159ffe: Downloading     771B/4kB[4B[4A[2Ked452d159ffe: Downloading      4kB/4kB[4B[4A[2Ked452d159ffe: Verifying Checksum [4B[4A[2Ked452d159ffe: Download complete [4B[7A[2Kc1f303dd79fd: Downloading  72.52MB/146MB[7B[9A[2K6a4a3ef82cdc: Extracting  10.81MB/48.54MB[9B[9A[2K6a4a3ef82cdc: Extracting  12.29MB/48.54MB[9B[9A[2K6a4a3ef82cdc: Extracting  15.24MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading  74.13MB/146MB[7B[9A[2K6a4a3ef82cdc: Extracting   17.2MB/48.54MB[9B[9A[2K6a4a3ef82cdc: Extracting  19.66MB/48.54MB[9B[9A[2K6a4a3ef82cdc: Extracting  22.61MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading  75.21MB/146MB[7B[9A[2K6a4a3ef82cdc: Extracting  25.07MB/48.54MB[9B[9A[2K6a4a3ef82cdc: Extracting  27.53MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading  77.35MB/146MB[7B[9A[2K6a4a3ef82cdc: Extracting  29.49MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading  78.95MB/146MB[7B[9A[2K6a4a3ef82cdc: Extracting  31.95MB/48.54MB[9B[9A[2K6a4a3ef82cdc: Extracting   34.9MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading  80.57MB/146MB[7B[5A[2K8d5d9330d269: Downloading     274B/274B[5B[5A[2K8d5d9330d269: Verifying Checksum [5B[5A[2K8d5d9330d269: Download complete [5B[9A[2K6a4a3ef82cdc: Extracting  36.86MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading  83.24MB/146MB[7B[3A[2Kf45794478ecf: Downloading     765B/765B[3B[3A[2Kf45794478ecf: Verifying Checksum [3B[3A[2Kf45794478ecf: Download complete [3B[7A[2Kc1f303dd79fd: Downloading   88.1MB/146MB[7B[9A[2K6a4a3ef82cdc: Extracting  37.85MB/48.54MB[9B[9A[2K6a4a3ef82cdc: Extracting  39.32MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading  88.64MB/146MB[7B[9A[2K6a4a3ef82cdc: Extracting  43.75MB/48.54MB[9B[9A[2K6a4a3ef82cdc: Extracting  45.22MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading  90.25MB/146MB[7B[9A[2K6a4a3ef82cdc: Extracting   46.2MB/48.54MB[9B[2A[2K8b09b2ba898a: Downloading     661B/661B[2B[2A[2K8b09b2ba898a: Verifying Checksum [2B[2A[2K8b09b2ba898a: Download complete [2B[7A[2Kc1f303dd79fd: Downloading  94.01MB/146MB[7B[7A[2Kc1f303dd79fd: Downloading  97.72MB/146MB[7B[7A[2Kc1f303dd79fd: Downloading  101.5MB/146MB[7B[1A[2K14512391bd1a: Downloading     718B/718B[1B[1A[2K14512391bd1a: Verifying Checksum [1B[1A[2K14512391bd1a: Download complete [1B[7A[2Kc1f303dd79fd: Downloading  104.7MB/146MB[7B[7A[2Kc1f303dd79fd: Downloading  110.1MB/146MB[7B[7A[2Kc1f303dd79fd: Downloading  112.8MB/146MB[7B[7A[2Kc1f303dd79fd: Downloading  116.5MB/146MB[7B[7A[2Kc1f303dd79fd: Downloading  119.2MB/146MB[7B[9A[2K6a4a3ef82cdc: Extracting  46.69MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading  121.9MB/146MB[7B[7A[2Kc1f303dd79fd: Downloading  124.6MB/146MB[7B[9A[2K6a4a3ef82cdc: Extracting  47.19MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading  126.7MB/146MB[7B[9A[2K6a4a3ef82cdc: Extracting  48.54MB/48.54MB[9B[7A[2Kc1f303dd79fd: Downloading  129.4MB/146MB[7B[7A[2Kc1f303dd79fd: Downloading  134.2MB/146MB[7B[9A[2K6a4a3ef82cdc: Pull complete [9B[8A[2K47477b9001f1: Extracting  32.77kB/1.856MB[8B[7A[2Kc1f303dd79fd: Downloading  138.5MB/146MB[7B[7A[2Kc1f303dd79fd: Downloading  143.4MB/146MB[7B[7A[2Kc1f303dd79fd: Verifying Checksum [7B[7A[2Kc1f303dd79fd: Download complete [7B[8A[2K47477b9001f1: Extracting   98.3kB/1.856MB[8B[8A[2K47477b9001f1: Extracting  1.856MB/1.856MB[8B[8A[2K47477b9001f1: Pull complete [8B[7A[2Kc1f303dd79fd: Extracting  557.1kB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  3.342MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  5.571MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  8.356MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  11.14MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  13.93MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  16.71MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  18.38MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  20.05MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  22.84MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  25.62MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  28.41MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting   31.2MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  34.54MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  37.32MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  40.11MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  43.45MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  46.24MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  49.02MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  51.81MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  54.03MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  55.71MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  57.38MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  57.93MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  58.49MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  59.05MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting   59.6MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  60.72MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  61.28MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  61.83MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  62.95MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting   63.5MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  64.06MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  64.62MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  65.18MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  65.73MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  66.29MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  66.85MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting   67.4MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  67.96MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  68.52MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  69.07MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  70.19MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  72.42MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting   75.2MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  76.87MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  79.66MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  81.33MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting     83MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  85.79MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  88.01MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  89.69MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  91.36MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  92.47MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  95.26MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  96.93MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting   98.6MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  99.16MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  101.9MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  104.7MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  107.5MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  110.3MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  112.5MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  113.6MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  115.9MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  118.1MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  120.9MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  123.7MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting    127MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  130.4MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  133.1MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  136.5MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  138.7MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  140.9MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  144.3MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting  145.9MB/146MB[7B[7A[2Kc1f303dd79fd: Extracting    146MB/146MB[7B[7A[2Kc1f303dd79fd: Pull complete [7B[6A[2Kc2a8ac45ca01: Extracting     696B/696B[6B[6A[2Kc2a8ac45ca01: Extracting     696B/696B[6B[6A[2Kc2a8ac45ca01: Pull complete [6B[5A[2K8d5d9330d269: Extracting     274B/274B[5B[5A[2K8d5d9330d269: Extracting     274B/274B[5B[5A[2K8d5d9330d269: Pull complete [5B[4A[2Ked452d159ffe: Extracting      4kB/4kB[4B[4A[2Ked452d159ffe: Extracting      4kB/4kB[4B[4A[2Ked452d159ffe: Pull complete [4B[3A[2Kf45794478ecf: Extracting     765B/765B[3B[3A[2Kf45794478ecf: Extracting     765B/765B[3B[3A[2Kf45794478ecf: Pull complete [3B[2A[2K8b09b2ba898a: Extracting     661B/661B[2B[2A[2K8b09b2ba898a: Extracting     661B/661B[2B[2A[2K8b09b2ba898a: Pull complete [2B[1A[2K14512391bd1a: Extracting     718B/718B[1B[1A[2K14512391bd1a: Extracting     718B/718B[1B[1A[2K14512391bd1a: Pull complete [1BDigest: sha256:dd36f6237384ea8e6aee9e386043f9205b5487b574a2580d59a955e4cae84f9d
+Status: Downloaded newer image for mysql/mysql-cluster:8.0
+5f6f2e726f7e84a5f862f6a764da4e270031c9e029e6be417669056a1f73b7ce
+csc572-docker:~# [6ndocker image ls
+REPOSITORY            TAG       IMAGE ID       CREATED        SIZE
+mysql/mysql-cluster   8.0       fa6adfe3e83c   9 months ago   586MB
+csc572-docker:~# [6ndocker container ls
+CONTAINER ID   IMAGE                     COMMAND                  CREATED              STATUS                                 PORTS                                           NAMES
+5f6f2e726f7e   mysql/mysql-cluster:8.0   "/entrypoint.sh ndb_…"   About a minute ago   Up About a minute (health: starting)   1186/tcp, 2202/tcp, 3306/tcp, 33060-33061/tcp   mgmt1
+csc572-docker:~# [6ncsc572-docker:~# [Jdocker run -d --net=cluster-network --name=ndb1 --ip=192.168.0.3 mysql/mysql-
+cluster:8.0 ndbd
+1ab5a6ab0ef2e02a628ce29eff5dd3903aeb6437ce295df5f83eabd0b41bbacd
+csc572-docker:~# [6ncsc572-docker:~# docker run -d --net=cluster-network --name=ndb1 --ip=192.168.0.3 mysql/mysql-
+cluster:8.0 ndbd[J[1Acsc572-docker:~# docker container ls[J
+CONTAINER ID   IMAGE                     COMMAND                  CREATED          STATUS                             PORTS                                           NAMES
+1ab5a6ab0ef2   mysql/mysql-cluster:8.0   "/entrypoint.sh ndbd"    36 seconds ago   Up 35 seconds (health: starting)   1186/tcp, 2202/tcp, 3306/tcp, 33060-33061/tcp   ndb1
+5f6f2e726f7e   mysql/mysql-cluster:8.0   "/entrypoint.sh ndb_…"   2 minutes ago    Up 2 minutes (unhealthy)           1186/tcp, 2202/tcp, 3306/tcp, 33060-33061/tcp   mgmt1
+csc572-docker:~# [6ndocker run -d --net=cluster-network --name=ndb2 --ip=192.168.0.4 mysql/mysql-
+cluster:8.0 ndbd
+3d88eaaff65aed12749f87a7c47fa0039ab65f35294af2b861ebb8537d9dff7d
+csc572-docker:~# [6ncsc572-docker:~# docker run -d --net=cluster-network --name=ndb2 --ip=192.168.0.4 mysql/mysql-
+cluster:8.0 ndbd[J[1Acsc572-docker:~# docker container ls[J
+CONTAINER ID   IMAGE                     COMMAND                  CREATED         STATUS                            PORTS                                           NAMES
+3d88eaaff65a   mysql/mysql-cluster:8.0   "/entrypoint.sh ndbd"    4 seconds ago   Up 3 seconds (health: starting)   1186/tcp, 2202/tcp, 3306/tcp, 33060-33061/tcp   ndb2
+1ab5a6ab0ef2   mysql/mysql-cluster:8.0   "/entrypoint.sh ndbd"    2 minutes ago   Up 2 minutes (unhealthy)          1186/tcp, 2202/tcp, 3306/tcp, 33060-33061/tcp   ndb1
+5f6f2e726f7e   mysql/mysql-cluster:8.0   "/entrypoint.sh ndb_…"   4 minutes ago   Up 4 minutes (unhealthy)          1186/tcp, 2202/tcp, 3306/tcp, 33060-33061/tcp   mgmt1
+csc572-docker:~# [6ndocker logs mgmt1
+[Entrypoint] MySQL Docker Image 8.0.32-1.2.11-cluster
+[Entrypoint] Starting ndb_mgmd
+Failed to open /sys/devices/system/cpu/cpu0/cache/index3/shared_cpu_list: No such file or directory
+WARNING: --ndb-connectstring is ignored when mgmd is started with -f or config-file.
+MySQL Cluster Management Server mysql-8.0.32 ndb-8.0.32
+2023-10-18 11:53:12 [MgmtSrvr] INFO     -- The default config directory '/usr/mysql-cluster' does not exist. Trying to create it...
+2023-10-18 11:53:12 [MgmtSrvr] INFO     -- Sucessfully created config directory
+2023-10-18 11:53:13 [MgmtSrvr] WARNING  -- at line 19: [DB] IndexMemory is deprecated, will use Number bytes on each ndbd(DB) node allocated for storing indexes instead
+2023-10-18 11:53:13 [MgmtSrvr] INFO     -- Got initial configuration from '/etc/mysql-cluster.cnf', will try to set it when all ndb_mgmd(s) started
+2023-10-18 11:53:13 [MgmtSrvr] INFO     -- Node 1: Node 1 Connected
+2023-10-18 11:53:13 [MgmtSrvr] INFO     -- Id: 1, Command port: *:1186
+==INITIAL==
+2023-10-18 11:53:13 [MgmtSrvr] INFO     -- MySQL Cluster Management Server mysql-8.0.32 ndb-8.0.32 started
+2023-10-18 11:53:13 [MgmtSrvr] INFO     -- Node 1 connected
+2023-10-18 11:53:13 [MgmtSrvr] INFO     -- Starting initial configuration change
+2023-10-18 11:53:13 [MgmtSrvr] INFO     -- Configuration 1 commited
+2023-10-18 11:53:13 [MgmtSrvr] INFO     -- Config change completed! New generation: 1
+==CONFIRMED==
+2023-10-18 11:55:13 [MgmtSrvr] INFO     -- Nodeid 2 allocated for NDB at 192.168.0.3
+2023-10-18 11:55:14 [MgmtSrvr] INFO     -- Node 1: Node 2 Connected
+2023-10-18 11:55:14 [MgmtSrvr] INFO     -- Node 2: Buffering maximum epochs 100
+2023-10-18 11:55:15 [MgmtSrvr] INFO     -- Node 2: Start phase 0 completed (system restart)
+2023-10-18 11:55:15 [MgmtSrvr] INFO     -- Node 2: Communication to Node 3 opened
+2023-10-18 11:55:15 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:55:18 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:55:21 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:55:24 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:55:27 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:55:30 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:55:33 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:55:36 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:55:39 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:55:42 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:55:45 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:55:48 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:55:51 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:55:54 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:55:57 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:56:00 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:56:03 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:56:06 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:56:09 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:56:12 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:56:15 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:56:18 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:56:21 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:56:24 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:56:27 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:56:30 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:56:33 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:56:36 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:56:39 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:56:42 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:56:45 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:56:48 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:56:51 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:56:54 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:56:57 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:57:00 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:57:03 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:57:06 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:57:09 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:57:12 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:57:15 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:57:18 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:57:21 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:57:24 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:57:27 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:57:30 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:57:33 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:57:36 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:57:39 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:57:42 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:57:43 [MgmtSrvr] INFO     -- Alloc node id 3 rejected, no new president yet
+2023-10-18 11:57:43 [MgmtSrvr] INFO     -- Nodeid 3 allocated for NDB at 192.168.0.4
+2023-10-18 11:57:44 [MgmtSrvr] INFO     -- Node 1: Node 3 Connected
+2023-10-18 11:57:45 [MgmtSrvr] INFO     -- Node 2: Initial start, waiting for 3 to connect,  nodes [ all: 2 and 3 connected: 2 no-wait:  ]
+2023-10-18 11:57:45 [MgmtSrvr] INFO     -- Node 3: Buffering maximum epochs 100
+2023-10-18 11:57:46 [MgmtSrvr] INFO     -- Node 3: Start phase 0 completed (system restart)
+2023-10-18 11:57:46 [MgmtSrvr] INFO     -- Node 3: Communication to Node 2 opened
+2023-10-18 11:57:46 [MgmtSrvr] INFO     -- Node 3: Initial start, waiting for 2 to connect,  nodes [ all: 2 and 3 connected: 3 no-wait:  ]
+2023-10-18 11:57:46 [MgmtSrvr] INFO     -- Node 3: Node 2 Connected
+2023-10-18 11:57:46 [MgmtSrvr] INFO     -- Node 2: Node 3 Connected
+2023-10-18 11:57:46 [MgmtSrvr] INFO     -- Node 2: Initial start with nodes 2 and 3 [ missing:  no-wait:  ]
+2023-10-18 11:57:46 [MgmtSrvr] INFO     -- Node 2: CM_REGCONF president = 2, own Node = 2, our dynamic id = 0/1
+2023-10-18 11:57:49 [MgmtSrvr] INFO     -- Node 3: CM_REGCONF president = 2, own Node = 3, our dynamic id = 0/2
+2023-10-18 11:57:49 [MgmtSrvr] INFO     -- Node 2: Node 3: API mysql-8.0.32 ndb-8.0.32
+2023-10-18 11:57:49 [MgmtSrvr] INFO     -- Node 3: Node 2: API mysql-8.0.32 ndb-8.0.32
+2023-10-18 11:57:49 [MgmtSrvr] INFO     -- Node 3: Start phase 1 completed (system restart)
+2023-10-18 11:57:49 [MgmtSrvr] INFO     -- Node 2: Start phase 1 completed (system restart)
+2023-10-18 11:57:49 [MgmtSrvr] INFO     -- Node 2: System Restart: master node: 2, num starting: 2, gci: 0
+2023-10-18 11:57:49 [MgmtSrvr] INFO     -- Node 2: CNTR_START_CONF: started: 0000000000000000000000000000000000000000
+2023-10-18 11:57:49 [MgmtSrvr] INFO     -- Node 2: CNTR_START_CONF: cntr_started: 0000000000000000000000000000000000000000
+2023-10-18 11:57:49 [MgmtSrvr] INFO     -- Node 2: CNTR_START_CONF: starting: 000000000000000000000000000000000000000c
+2023-10-18 11:57:49 [MgmtSrvr] INFO     -- Node 2: Local redo log file initialization status: #Total files: 64, Completed: 0 #Total MBytes: 1024, Completed: 0
+2023-10-18 11:57:49 [MgmtSrvr] INFO     -- Node 3: Local redo log file initialization status: #Total files: 64, Completed: 0 #Total MBytes: 1024, Completed: 0
+2023-10-18 11:57:50 [MgmtSrvr] INFO     -- Node 3: Local redo log file initialization completed: #Total files: 64, Completed: 64 #Total MBytes: 1024, Completed: 1024
+2023-10-18 11:57:50 [MgmtSrvr] INFO     -- Node 3: Start phase 2 completed (initial start)
+2023-10-18 11:57:50 [MgmtSrvr] INFO     -- Node 2: Local redo log file initialization completed: #Total files: 64, Completed: 64 #Total MBytes: 1024, Completed: 1024
+2023-10-18 11:57:50 [MgmtSrvr] INFO     -- Node 3: Start phase 3 completed (initial start)
+2023-10-18 11:57:50 [MgmtSrvr] INFO     -- Node 2: Start phase 2 completed (initial start)
+2023-10-18 11:57:50 [MgmtSrvr] INFO     -- Node 2: Start phase 3 completed (initial start)
+2023-10-18 11:57:50 [MgmtSrvr] INFO     -- Node 2: Start phase 4 completed (initial start)
+2023-10-18 11:57:50 [MgmtSrvr] INFO     -- Node 3: Start phase 4 completed (initial start)
+2023-10-18 11:57:51 [MgmtSrvr] INFO     -- Node 2: Make On-line Database recoverable by waiting for LCP Starting, LCP id = 1
+2023-10-18 11:57:51 [MgmtSrvr] INFO     -- Node 2: Local checkpoint 1 started. Keep GCI = 1 oldest restorable GCI = 1
+2023-10-18 11:57:51 [MgmtSrvr] INFO     -- Node 2: LDM(0): Completed LCP, #frags = 4 #records = 0, #bytes = 0
+2023-10-18 11:57:51 [MgmtSrvr] INFO     -- Node 3: LDM(0): Completed LCP, #frags = 4 #records = 0, #bytes = 0
+2023-10-18 11:57:51 [MgmtSrvr] INFO     -- Node 2: Local checkpoint 1 completed
+2023-10-18 11:57:51 [MgmtSrvr] INFO     -- Node 2: Make On-line Database recoverable by waiting for LCP Completed, LCP id = 1
+2023-10-18 11:57:51 [MgmtSrvr] INFO     -- Node 3: Start phase 5 completed (initial start)
+2023-10-18 11:57:51 [MgmtSrvr] INFO     -- Node 2: Start phase 5 completed (initial start)
+2023-10-18 11:57:51 [MgmtSrvr] INFO     -- Node 3: Start phase 6 completed (initial start)
+2023-10-18 11:57:51 [MgmtSrvr] INFO     -- Node 2: Start phase 6 completed (initial start)
+2023-10-18 11:57:51 [MgmtSrvr] INFO     -- Node 2: President restarts arbitration thread [state=1]
+2023-10-18 11:57:51 [MgmtSrvr] INFO     -- Node 3: Start phase 7 completed (initial start)
+2023-10-18 11:57:51 [MgmtSrvr] INFO     -- Node 2: Start phase 7 completed (initial start)
+2023-10-18 11:57:51 [MgmtSrvr] INFO     -- Node 2: Start phase 8 completed (initial start)
+2023-10-18 11:57:51 [MgmtSrvr] INFO     -- Node 3: Start phase 8 completed (initial start)
+2023-10-18 11:57:51 [MgmtSrvr] INFO     -- Node 3: Node 1: API mysql-8.0.32 ndb-8.0.32
+2023-10-18 11:57:51 [MgmtSrvr] INFO     -- Node 2: Node 1: API mysql-8.0.32 ndb-8.0.32
+2023-10-18 11:57:51 [MgmtSrvr] INFO     -- Node 3: Prepare arbitrator node 1 [ticket=0008000130714847]
+2023-10-18 11:57:51 [MgmtSrvr] INFO     -- Node 2: Started arbitrator node 1 [ticket=0008000130714847]
+2023-10-18 11:57:53 [MgmtSrvr] INFO     -- Node 2: Start phase 9 completed (initial start)
+2023-10-18 11:57:53 [MgmtSrvr] INFO     -- Node 3: Start phase 9 completed (initial start)
+2023-10-18 11:57:53 [MgmtSrvr] INFO     -- Node 3: Start phase 50 completed (initial start)
+2023-10-18 11:57:53 [MgmtSrvr] INFO     -- Node 2: Start phase 50 completed (initial start)
+2023-10-18 11:57:53 [MgmtSrvr] INFO     -- Node 3: Start phase 101 completed (initial start)
+2023-10-18 11:57:53 [MgmtSrvr] INFO     -- Node 2: Start phase 101 completed (initial start)
+2023-10-18 11:57:53 [MgmtSrvr] INFO     -- Node 3: Started (mysql-8.0.32 ndb-8.0.32)
+2023-10-18 11:57:53 [MgmtSrvr] INFO     -- Node 2: Started (mysql-8.0.32 ndb-8.0.32)
+2023-10-18 11:57:53 [MgmtSrvr] INFO     -- Node 2: Communication to Node 4 opened
+2023-10-18 11:57:54 [MgmtSrvr] INFO     -- Node 3: Communication to Node 4 opened
+csc572-docker:~# [6ndocker run -d –p 3306:3306 --net=cluster-network --name=mysql1 --ip=192.168.0
+.10 -e MYSQL_ALLOW_EMPTY_PASSWORD=yes mysql/mysql-cluster:8.0
+docker: invalid reference format.
+See 'docker run --help'.
+csc572-docker:~# [6ncsc572-docker:~# [Jcsc572-docker:~# docker run -d –p 3306:3306 --net=cluster-network --name=mysql1 --ip=192.168.0.10 -e MYSQL_ALL
+OW_EMPTY_PASSWORD=yes mysql/mysql-cluster:8.0[J[1Acsc572-docker:~# docker run -d –p 3306:3306 --net=cluster-network --name=mysql1 --ip=192.168.0.10 -e MYSQL_ALLOW_EM
+PTY_PASSWORD=yes mysql/mysql-cluster:8.0[J[1Acsc572-docker:~# docker run -d –p 3306:3306 --net=cluster-network --name=mysql1 --ip=192.168.0.10 -e MYSQL_ALLOW_EMPTY_PASSWORD=yes mysql/mysql
+-cluster:8.0[J
+docker: invalid reference format.
+See 'docker run --help'.
+csc572-docker:~# [6ndocker run -d –p 3306:3306 --net=cluster-network --name=mysql1 --ip=192.168.0.10 -e MYSQL_ALLOW_EMPTY_PASSWORD=yes mysql/mysql
+-cluster:8.0
+docker: invalid reference format.
+See 'docker run --help'.
+csc572-docker:~# [6ndocker run -d -p 3306:3306 --net=cluster-network --name=mysql1 --ip=192.168.0.10 -e MYSQL_ALLOW_EMPTY_PASSWORD=yes mysql/mysql
+-cluster:8.0
+87ee87878f226cbd17506d73b44f3f6f50df9f87c7b10f3a9c36ce70c49fbd4c
+csc572-docker:~# [6ndocker container ls
+CONTAINER ID   IMAGE                     COMMAND                  CREATED          STATUS                      PORTS                                                                            NAMES
+87ee87878f22   mysql/mysql-cluster:8.0   "/entrypoint.sh mysq…"   4 minutes ago    Up 4 minutes (healthy)      1186/tcp, 2202/tcp, 33060-33061/tcp, 0.0.0.0:3306->3306/tcp, :::3306->3306/tcp   mysql1
+3d88eaaff65a   mysql/mysql-cluster:8.0   "/entrypoint.sh ndbd"    17 minutes ago   Up 17 minutes (unhealthy)   1186/tcp, 2202/tcp, 3306/tcp, 33060-33061/tcp                                    ndb2
+1ab5a6ab0ef2   mysql/mysql-cluster:8.0   "/entrypoint.sh ndbd"    19 minutes ago   Up 19 minutes (unhealthy)   1186/tcp, 2202/tcp, 3306/tcp, 33060-33061/tcp                                    ndb1
+5f6f2e726f7e   mysql/mysql-cluster:8.0   "/entrypoint.sh ndb_…"   21 minutes ago   Up 21 minutes (unhealthy)   1186/tcp, 2202/tcp, 3306/tcp, 33060-33061/tcp                                    mgmt1
+csc572-docker:~# [6ndocker exec -it mgmt1 bash
+bash-4.4# ndb_mgm
+Failed to open /sys/devices/system/cpu/cpu0/cache/index3/shared_cpu_list: No such file or directory
+-- NDB Cluster -- Management Client --
+ndb_mgm> ndb_mgm
+Connected to Management Server at: 192.168.0.2:1186
+Invalid command: ndb_mgm
+Type HELP for help.
+
+ndb_mgm> show
+Cluster Configuration
+---------------------
+[ndbd(NDB)]	2 node(s)
+id=2	@192.168.0.3  (mysql-8.0.32 ndb-8.0.32, Nodegroup: 0, *)
+id=3	@192.168.0.4  (mysql-8.0.32 ndb-8.0.32, Nodegroup: 0)
+
+[ndb_mgmd(MGM)]	1 node(s)
+id=1	@192.168.0.2  (mysql-8.0.32 ndb-8.0.32)
+
+[mysqld(API)]	1 node(s)
+id=4	@192.168.0.10  (mysql-8.0.32 ndb-8.0.32)
+
+ndb_mgm> exit
+bash-4.4# exit
+exit
+csc572-docker:~# [6ndocker exec -it mysql1 bash
+bash-4.4# mysql -u root
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 27
+Server version: 8.0.32-cluster MySQL Cluster Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE DATABASE lab4;
+Query OK, 1 row affected (0.08 sec)
+
+mysql> CREATE USER mtalh2@"%" IDENTIFIED WITH mysql_native_password BY 'hr?sL6iD%fatUUJ1';
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> GRANT ALL PRIVILEGES ON lab4.*TO mtalh2@"%";
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| lab4               |
+| mysql              |
+| ndbinfo            |
+| performance_schema |
+| sys                |
++--------------------+
+6 rows in set (0.02 sec)
+
+mysql> USE lab4 Database
+Database changed
+mysql> [8GUSE lab4 Database[8Gshow databases;[K
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| lab4               |
+| mysql              |
+| ndbinfo            |
+| performance_schema |
+| sys                |
++--------------------+
+6 rows in set (0.01 sec)
+
+mysql> [8Gshow databases;[8GUSE lab4 Database[8Gshow databases;[K[8GGRANT ALL PRIVILEGES ON lab4.*TO mtalh2@"%";[8GCREATE DATABASE lab4;[K[8GGRANT ALL PRIVILEGES ON lab4.*TO mtalh2@"%";[8GCREATE DATABASE lab4;[Kmysql> CREATE DATABASE lab;[26G;[K[25G;[K[24G;[K[23G;[K[22G;[K[21G;[K[20G;[K[19G;[K[18G;[K;[18G[K[17G[K[16G[K[15G[K[14G[13G[K[12G[K[11G[K[10G[K[9G[K[8G[KCREATE DATABASE cluster_db;
+Query OK, 1 row affected (0.07 sec)
+
+mysql> USE cluster_db;
+Database changed
+mysql> CREATE TABLE mtalh2_tbl ( id INT(11) NOT NULL AUTO_INCREMENT,  val VARCHAR(32) NOT NULL, PRIMARY KEY (id)) ENGINE=NDBCLUSTER;
+Query OK, 0 rows affected, 1 warning (0.24 sec)
+
+mysql> INSERT INTO lab4_tbl VALUES(NULL,MD5(RAND()));
+ERROR 1146 (42S02): Table 'cluster_db.lab4_tbl' doesn't exist
+mysql> INSERT INTO mtalh2_tbl VALUES(NULL,MD5(RAND()));
+Query OK, 1 row affected (0.03 sec)
+
+mysql> SELECT * FROM mtalh2_tbl;
++----+----------------------------------+
+| id | val                              |
++----+----------------------------------+
+|  1 | 63e5341010642d10897a013046e53b32 |
++----+----------------------------------+
+1 row in set (0.01 sec)
+
+mysql> INSERT INTO mtalh2_tbl SELECT NULL,MD5(RAND()) FROM mtalh2_tbl;
+Query OK, 1 row affected (0.02 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM mtalh2_tbl;
++----+----------------------------------+
+| id | val                              |
++----+----------------------------------+
+|  1 | 63e5341010642d10897a013046e53b32 |
+|  2 | 1553287012287e09ecead23e99bead38 |
++----+----------------------------------+
+2 rows in set (0.00 sec)
+
+mysql> describe mtalh2_tbl;
++-------+-------------+------+-----+---------+----------------+
+| Field | Type        | Null | Key | Default | Extra          |
++-------+-------------+------+-----+---------+----------------+
+| id    | int         | NO   | PRI | NULL    | auto_increment |
+| val   | varchar(32) | NO   |     | NULL    |                |
++-------+-------------+------+-----+---------+----------------+
+2 rows in set (0.01 sec)
+
+mysql> SHOW TABLE STATUS WHERE Name = 'mtalh2_tbl';
++------------+------------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+---------------------+-------------+------------+--------------------+----------+----------------+---------+
+| Name       | Engine     | Version | Row_format | Rows | Avg_row_length | Data_length | Max_data_length | Index_length | Data_free | Auto_increment | Create_time         | Update_time | Check_time | Collation          | Checksum | Create_options | Comment |
++------------+------------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+---------------------+-------------+------------+--------------------+----------+----------------+---------+
+| mtalh2_tbl | ndbcluster |      10 | Dynamic    |    2 |             28 |       65536 |               0 |            0 |         0 |              3 | 2023-10-18 13:55:08 | NULL        | NULL       | utf8mb4_0900_ai_ci |     NULL |                |         |
++------------+------------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+---------------------+-------------+------------+--------------------+----------+----------------+---------+
+1 row in set (0.01 sec)
+
+mysql> exit
+Bye
+bash-4.4# exit
+exit
+csc572-docker:~# [6nexit
+Connection to mtalh2.csc570e.edu closed.
+]0;mtalh2@csc570e:~[mtalh2@csc570e ~]$ exit
+exit
+
+Script done on Wed 18 Oct 2023 09:09:24 AM CDT
